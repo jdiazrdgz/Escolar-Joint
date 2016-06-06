@@ -218,7 +218,7 @@
                                                           out.print("</div>");
                                                           out.print("<div class='form-group has-feedback has-feedback-left'>");
                                                             out.print("<label class='control-label'>Contraseña</label>");
-                                                            out.print("<input type='text' class='form-control' placeholder='Contraseña' id='contrasenia' name='contrasenia'/>");
+                                                            out.print("<input type='password' class='form-control' placeholder='Contraseña' id='contrasenia' name='contrasenia'/>");
                                                             out.print("<i class='form-control-feedback glyphicon glyphicon-console'></i>");
                                                         out.print("</div>");
                                                     out.print("</div>");

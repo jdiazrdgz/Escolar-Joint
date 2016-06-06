@@ -9,22 +9,24 @@
 <%
     if(request.getAttribute("trabajador")!=null && request.getAttribute("promedio")!=null){
         int promedio=(Integer)request.getAttribute("promedio");
+        System.out.println("promedio"+promedio);
         String valor="";
-        if(promedio<=1){
+        if(promedio==1){
             valor="uno";
         }
-        if(promedio<=2){
+        if(promedio==2){
             valor="dos";
         }
-        if(promedio<=3){
+        if(promedio==3){
             valor="tres";
         }
-        if(promedio<=4){
+        if(promedio==4){
             valor="cuatro";
         }
-        if(promedio<=5){
+        if(promedio==5){
             valor="cinco";
         }
+        System.out.println(valor);
         Trabajador t=(Trabajador)request.getAttribute("trabajador");
         out.println("<div class='col-md-12'>");
             out.println("<h3 class='text-center'>"+t.getNombre()+"</h3><hr>");

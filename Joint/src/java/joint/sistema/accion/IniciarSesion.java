@@ -79,6 +79,8 @@ public class IniciarSesion extends HttpServlet {
                         int idTrabajador = gestionadorT.getIdTrabajador(trabajador);
                         sesion.setAttribute("idTrabajador", idTrabajador);
                         String estado =gestionadorT.getEstadoInicial();
+                        trabajador=gestionadorT.getCargo();
+                        sesion.setAttribute("cargo", trabajador.getCargo());
                             if(estado.equals("false")){
                                 request.getRequestDispatcher("/primerInicio.jsp").forward(request, response); 
                             }else{

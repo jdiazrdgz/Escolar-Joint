@@ -8,3 +8,4 @@
     <div class='col-md-12 alert alert-warning'>
         <strong>El empleado ha sido registrado satisfactoriamente </strong> Ahora puede iniciar sesión
     </div>
+    <button type='button' class='btn btn-success btn-block ' onclick="location='../../inicio.jsp'">Regresar a inicio</button>

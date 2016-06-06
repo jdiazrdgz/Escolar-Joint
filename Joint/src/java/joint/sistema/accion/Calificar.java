@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import joint.sistema.gestion.GestionadorCalificacion;
 import joint.sistema.principal.Calificacion;
 
@@ -27,7 +28,18 @@ public class Calificar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         if(request.getParameter("comentarios")!=null && request.getParameter("puntuacion")!=null && request.getParameter("idCalificacion")!=null){
             String Comentarios=request.getParameter("comentarios");
-            int idCalificacion=Integer.parseInt(request.getParameter("idCalificacion"));
+            HttpSession sesion = request.getSession();
+            String cargo= (String)sesion.getAttribute("cargo");
+            System.out.println("cargo calificar" + cargo);
+            int idCalificacion=0;
+            if(cargo.equals("Despachador")){
+                idCalificacion=Integer.parseInt(request.getParameter("idCalificacion"));
+                idCalificacion--;
+            }
+            if(cargo.equals("Operador")){
+                idCalificacion=Integer.parseInt(request.getParameter("idCalificacion"));
+                idCalificacion++;
+            }
             int puntuacion=Integer.parseInt(request.getParameter("puntuacion"));
             String fecha;
             Calendar c = Calendar.getInstance();
